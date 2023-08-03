@@ -1,0 +1,28 @@
+<div class="file-container mt-2 mb-2 relative ">
+  <input type="file" multiple id="file" class="absolute" (change)="getFile($event)" style="opacity: 0; top: 0; left: 0; right: 0; bottom: 0; z-index: 10;">
+  <button class="w-full" for="file" mat-raised-button>Choose File(s) </button>
+  
+</div>
+
+<div *ngFor="let file of files" fxLayout="row" fxLayoutAlign="space-between center" class="mb-2 mt-1 width " >
+      <div class="mr-2 mt-2" (click)="uploadFilePreviewPopup(file)">File name: <span style="color: red;cursor: pointer;">{{file.name}}</span> </div> 
+      <!-- <div class="mr-2 mt-2"> 
+          <mat-form-field appearance="fill">
+          <mat-select>
+            <mat-option *ngFor="let x of imgdoc" [value]="x.value">
+              {{x.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field></div> -->
+        <div class="mt-1" style="margin-left: 50%" >
+<!-- 
+    <mat-form-field class="w-full max100px"  appearance="outline">
+      <mat-select    (selectionChange)="document_code(file,$event.value)">
+        <mat-option *ngFor="let mode of imgdoc" [value]="mode.value" >
+          {{ mode.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    </div>
+      <button (click)="clearFile(file)" mat-raised-button>Delete File </button>
+</div> 

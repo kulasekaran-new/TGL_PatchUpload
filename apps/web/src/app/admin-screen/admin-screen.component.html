@@ -1,0 +1,76 @@
+<div class="col-lg-12">
+  <div class="row">
+    <div class="col-lg-11"></div>
+    <div class="col-lg-1"> <i class="fa fa-arrow-left" (click)="back()" matTooltip="Patch List"  style="font-size: 19px;cursor: pointer;"  aria-hidden="true"></i></div>
+  </div>
+</div>
+<div class="col-lg-12">
+  
+</div>
+<div class="mtop">
+  <mat-card class="card_des"  style="text-align: center;">
+    <mat-card-title><h2><b>Admin Upload </b></h2>	</mat-card-title>
+    <mat-card-content>
+      <div class="col-lg-12  ">
+        <div class="row">
+          <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+          <mat-form-field class="col-lg-8" >
+            <mat-label>Company</mat-label>
+            <mat-select (selectionChange)="company_change($event.value)">
+              <mat-option  *ngFor="let mode of companyList" [value]="mode"> {{mode.NAME}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4">
+          <mat-form-field class="col-lg-8">
+            <mat-label>Product</mat-label>
+            <mat-select (selectionChange)="product_change($event.value)">
+              <mat-option value="EFS">EFS</mat-option>
+              <mat-option value="WEB" >WEB</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-2"></div>
+        </div>
+      </div>
+        <div class="col-lg-12">
+          <div class="row">
+          <div class="col-lg-2"></div>
+          <mat-form-field class="example-full-width col-lg-8">
+            <mat-label>Note</mat-label>
+            <textarea matInput placeholder="Max 4000 characters" name="notes" [(ngModel)]="notes" style="height: 100px;"></textarea>
+          </mat-form-field>
+          <div class="col-lg-2"></div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+          <div class="col-lg-2"></div>
+
+          <div class="col-lg-8">
+            
+            <app-file-upload (selectedFiles)="selectedFiles($event)" ></app-file-upload>
+            
+            <!-- <input type="file" ng2FileSelect  (onFileSelected)="onFileSelected($event)" /> -->
+          </div>
+          <div class="col-lg-2"></div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-5"></div>
+          <div class="col-lg-3">
+            <button mat-raised-button (click)="submit()">Submit</button>
+          
+            <!-- <button mat-raised-button >Clear</button> -->
+          </div>
+          </div>
+        </div>  
+  </mat-card-content>
+  </mat-card>
+</div>
+
+
+

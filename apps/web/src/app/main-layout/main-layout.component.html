@@ -1,0 +1,31 @@
+<!-- 
+<div class="mainlayout-container">
+  <mat-toolbar color="primary" class="">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <button *ngFor="let nav of fillerNav" mat-button color="white" routerLink="{{nav.link}}">
+      {{nav.Routename}}
+      <span class=""></span>
+    </button>
+    <input type="search" matInput placeholder="Ex. Pizza" value="" >
+    <svg width="35" height="40" viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H33C33.8284 0.5 34.5 1.17157 34.5 2V38C34.5 38.8284 33.8284 39.5 33 39.5H2C1.17157 39.5 0.5 38.8284 0.5 38V2Z" fill="#FFF7F8" stroke="white"/>
+      <path d="M26.6806 28.2052L23.2747 24.8257C24.4711 23.3056 25.1159 21.425 25.1039 19.4913C25.0919 17.5577 24.4238 15.6852 23.2087 14.1801C21.9935 12.675 20.3034 11.6261 18.4143 11.205C16.5253 10.784 14.5492 11.0155 12.809 11.8619C11.0687 12.7082 9.6673 14.1193 8.83375 15.8645C8.00021 17.6097 7.78383 19.5858 8.21999 21.4698C8.65615 23.3538 9.71904 25.0342 11.235 26.2365C12.7509 27.4387 14.6301 28.0917 16.5656 28.0886C18.4704 28.092 20.3203 27.4512 21.8144 26.2707L25.197 29.6968C25.2943 29.7952 25.4107 29.8728 25.5391 29.9249C25.6674 29.977 25.805 30.0025 25.9435 29.9998C26.2212 29.9944 26.4871 29.8865 26.69 29.6968C26.7889 29.5991 26.8674 29.4827 26.9206 29.3542C26.9739 29.2258 27.0009 29.088 27 28.949C26.9991 28.81 26.9704 28.6726 26.9156 28.5448C26.8607 28.4171 26.7808 28.3016 26.6806 28.2052ZM22.9948 19.5583C22.9979 21.0504 22.4829 22.4973 21.5375 23.6524C20.5922 24.8075 19.2751 25.5992 17.8108 25.8925C16.3465 26.1859 14.8258 25.9626 13.5078 25.261C12.1898 24.5593 11.1563 23.4226 10.5834 22.0446C10.0105 20.6667 9.93377 19.1329 10.3662 17.7048C10.7987 16.2766 11.7136 15.0426 12.955 14.2131C14.1963 13.3835 15.6872 13.0099 17.1735 13.1559C18.6597 13.3018 20.0493 13.9583 21.1052 15.0135C21.7056 15.6083 22.1818 16.3164 22.5062 17.0966C22.8305 17.8767 22.9966 18.7135 22.9948 19.5583Z" fill="#4D4D4D"/>
+    </svg>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let nav of fillerNav" routerLink="nav.link">
+          {{nav.Routename}}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

@@ -1,0 +1,75 @@
+<div class="col-lg-12">
+    
+    <div class="flex"><img src="../../assets/logo_newage.png" style="    height: 35px;
+      top: 7px;
+      left: 8px;
+      position: relative;
+  "/>
+          <span class="tit">
+            
+            <h3>User can download the latest updates available here by reading individual patch content list kindly click the Release notes</h3>
+          </span>
+          <div class="uploadbtn">
+            <button mat-raised-button (click)="navigate()">Upload</button>
+            <span><i class="fa fa-sign-out" matTooltip="loguot" style="font-size: 26px;
+              padding-left: 14px;
+              top: 8px;
+              position: relative;cursor: pointer;
+              color: #2e56f1;" aria-hidden="true" (click)="loguot()"></i></span>
+          </div>
+    </div>
+</div>
+
+<div class="col-lg-12">
+  <div class="row">
+    <!-- <div  class="input-field col s2"><label for="resultlimit">  </label></div> -->
+            
+    
+      <mat-form-field class="col-lg-3" style=padding-left:115px> 
+        <mat-label>Results per Patch data</mat-label>
+        <mat-select (selectionChange)="someMethod2($event.value)">
+          <mat-option value="12">12</mat-option>
+          <mat-option value="ALL" >ALL</mat-option>
+        </mat-select>
+      </mat-form-field>
+ 
+   <form class="example-form" style="padding-left: 47px;">
+    <mat-form-field class="example-full-width" >
+    <input type="text" placeholder="Search By Patch Name" matTooltip="Search By Patch Name" aria-label="Choose one option" matInput [matAutocomplete]="auto21" [(ngModel)]="temp.val" name="val" (keyup)="keyup_func1($event)" aria-label=""> 
+    <mat-autocomplete #auto21="matAutocomplete" [class]="'blue-bg'">
+      <mat-option *ngFor="let option of companylist1" 
+      (click)="someMethod1($event,option)" [value]="option">
+        {{ option.FILE_NAME }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+ </form>
+  </div>
+</div>
+
+<div class="wrap" >
+  <div class="col-lg-12" >
+    <span >
+    <div class="col-lg-12">
+     
+      <div class="tile" *ngFor="let a of companylist"> 
+        <div class="text">
+        <h3 style="font-size: 19px;">{{a.FILE_NAME}} </h3>
+        <h3>{{a.CREATE_DATE}}</h3>
+        {{a.FILE_SIZE}}<h4 class="animate-text">
+          <button mat-raised-button (click)="download_patch(a,'P')">Download</button>
+          <button mat-raised-button (click)="download_patch(a,'N')" style="left: 102px; bottom: 36px">Release Notes</button></h4>
+        <h2 ></h2>
+        </div>
+      </div>
+    
+    </div></span>
+    </div>
+</div>
+
+<footer>
+  <span style="left: 34rem;
+  position: fixed;bottom: 0px;
+">© 2023 New Age Software & Solutions. All rights reserved.</span>
+</footer>
+

@@ -1,0 +1,8 @@
+<div style="background-color: #f01e1e;;height: 39px;max-width: 100%;" ></div>
+
+<div style="max-width: 100%; height: calc( 100% - 40px )"> 
+  <img *ngIf="imgfile" [src]="src" >
+  <pre > {{src}}</pre>
+  <embed [src]="src"  class="w-full h-full" />
+  <div *ngIf="type=='others'" style="padding-top:230px;text-align: center;color: #92929d;font-style: italic;">Unable to preview the file</div>
+</div>
