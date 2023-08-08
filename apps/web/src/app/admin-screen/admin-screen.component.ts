@@ -127,13 +127,20 @@ export class AdminScreenComponent {
     this.show = this.ebooking.image_upload[0].file_content
       // console.log(this.ebooking.image_upload[0].file_content)
     let filename = this.ebooking.image_upload[0].file_name
-    let files = this.ebooking.image_upload[0].file_content
+    let files1 = this.ebooking.image_upload[0].file_content.split(',')
     let notes = this.notes
-
-
-
+    let files = files1[1]
+    let len = files.split('').length/4
+    let len1 =files.split(len,4)
+    console.log(files)
+    console.log(files.split('').length/4)
+    console.log(filename)
+    this.show = files
+    // console.log(files.split(','))
     // let type = this.ebooking.image_upload[0].file_type
     let type ='EFS' 
+
+    return false
     this.supportservice.upload_patch(username,this.company_name,type,files,filename,this.product_name,notes).subscribe((data: any) => {
         console.log(data)
     })
